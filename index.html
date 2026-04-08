@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Loading…</title>
+
+  <!-- Google Fonts — change font names in theme.js → fonts, then update families here -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Component styles — all layout, no hardcoded colors -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Component-specific styles that live alongside their JS -->
+  <style>
+    /* card.js styles */
+    .card-img        { height:160px; background:var(--bg3); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    .card-img img    { width:100%; height:100%; object-fit:cover; opacity:.85; }
+    .card-img-placeholder { display:flex; flex-direction:column; align-items:center; gap:10px; }
+    .card-img-icon   { width:52px; height:52px; background:var(--surface2); border:1px solid var(--border2); border-radius:12px; display:flex; align-items:center; justify-content:center; }
+    .card-img-logo   { width:52px; height:52px; object-fit:contain; border-radius:12px; }
+    .card-img-caption{ font-family:var(--font-mono); font-size:10px; color:var(--muted); letter-spacing:.1em; text-align:center; padding:0 20px; }
+    .img-hint        { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,.7); padding:3px 8px; border-radius:3px; font-family:var(--font-mono); font-size:9px; color:var(--accent); letter-spacing:.1em; }
+    .card-body       { padding:var(--card-padding); flex:1; display:flex; flex-direction:column; }
+    .card-name       { font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--text); margin-bottom:4px; }
+    .card-tagline    { font-family:var(--font-mono); font-size:12px; color:var(--accent); margin-bottom:14px; }
+    .card-desc       { font-size:14px; color:var(--muted); line-height:1.65; margin-bottom:20px; flex:1; }
+    .stack-pills     { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+    .stack-pill      { padding:4px 10px; background:var(--accent-soft); border:1px solid var(--accent-border); border-radius:3px; font-family:var(--font-mono); font-size:11px; color:var(--accent); }
+    .card-actions    { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .card-bar        { height:3px; }
+
+    /* buttons.js styles */
+    .btn-primary         { padding:14px 32px; background:var(--accent); color:#050510; font-family:var(--font-display); font-weight:700; font-size:14px; border:none; border-radius:4px; cursor:none; text-decoration:none; letter-spacing:.05em; transition:all .2s; display:inline-block; }
+    .btn-primary:hover   { filter:brightness(1.1); transform:translateY(-2px); }
+    .btn-ghost           { padding:14px 32px; background:transparent; color:var(--text); font-family:var(--font-display); font-weight:600; font-size:14px; border:1px solid var(--border2); border-radius:4px; cursor:none; text-decoration:none; letter-spacing:.05em; transition:all .2s; display:inline-block; }
+    .btn-ghost:hover     { border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+    .form-btn            { padding:14px 28px; background:var(--accent); color:#050510; font-family:var(--font-display); font-weight:700; font-size:14px; border:none; border-radius:4px; cursor:none; letter-spacing:.05em; transition:all .2s; align-self:flex-start; }
+    .form-btn:hover      { filter:brightness(1.1); }
+    .contact-link        { display:flex; align-items:center; gap:14px; text-decoration:none; padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:6px; transition:all .2s; }
+    .contact-link:hover  { border-color:rgba(0,217,200,.3); transform:translateX(4px); }
+    .contact-link-icon   { width:36px; height:36px; background:var(--surface2); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0; }
+    .contact-link-label  { font-family:var(--font-mono); font-size:10px; color:var(--accent); text-transform:uppercase; letter-spacing:.15em; margin-bottom:2px; }
+    .contact-link-value  { font-size:14px; color:var(--text); }
+    .contact-link-arrow  { color:var(--accent); font-size:14px; margin-left:auto; }
+
+    /* indicators.js styles */
+    .tech-pill           { padding:6px 14px; background:var(--surface); border:1px solid var(--border); border-radius:3px; font-family:var(--font-mono); font-size:12px; color:var(--muted); transition:all .2s; }
+    .tech-pill:hover     { border-color:var(--accent); color:var(--accent); }
+    .tl-badge            { display:inline-block; padding:2px 10px; background:rgba(181,240,90,.1); border:1px solid rgba(181,240,90,.25); border-radius:3px; font-family:var(--font-mono); font-size:10px; color:var(--accent-lime); letter-spacing:.1em; margin-left:8px; vertical-align:middle; }
+    .ps-badge            { display:inline-flex; align-items:center; gap:8px; padding:8px 14px; background:#000; border:1px solid rgba(255,255,255,.12); border-radius:6px; text-decoration:none; transition:border-color .2s; }
+    .ps-badge:hover      { border-color:rgba(255,255,255,.3); }
+    .ps-badge-text span  { display:block; line-height:1.15; }
+    .ps-badge-text span:first-child { font-size:9px; color:rgba(255,255,255,.7); letter-spacing:.02em; }
+    .ps-badge-text span:last-child  { font-family:var(--font-display); font-size:13px; font-weight:600; color:#fff; }
+    .card-link           { padding:8px 14px; background:transparent; border:1px solid var(--border2); border-radius:6px; color:var(--muted); text-decoration:none; font-family:var(--font-mono); font-size:12px; transition:all .2s; }
+    .card-link:hover     { border-color:var(--accent); color:var(--accent); }
+    .project-card        { background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow:hidden; transition:transform var(--transition-speed) ease, border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease; display:flex; flex-direction:column; }
+    .project-card:hover  { transform:var(--hover-lift); border-color:rgba(0,217,200,.3); box-shadow:0 20px 60px rgba(0,217,200,.08); }
+  </style>
+</head>
+<body>
+
+  <!-- Cursor layers (wired by indicators.js → initCursor) -->
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <nav>
+    <div id="nav-logo" class="nav-logo"></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <div id="hero">
+    <div class="hero-blob"></div>
+    <div class="hero-blob2"></div>
+    <div class="hero-inner">
+      <p id="hero-label"  class="hero-label"></p>
+      <h1 id="hero-name"  class="hero-name"></h1>
+      <p id="hero-sub"    class="hero-sub"></p>
+      <p id="hero-stack"  class="hero-stack"></p>
+      <div id="hero-ctas" class="hero-ctas"></div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll</span>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ── ABOUT ────────────────────────────────────────────── -->
+  <section id="about">
+    <div class="section-wrap">
+      <div class="reveal about-grid">
+        <div class="avatar-wrap">
+          <div class="avatar-box" id="avatar-box">
+            <div class="avatar-initials" id="avatar-initials"></div>
+            <p class="avatar-hint" id="avatar-hint">ADD YOUR PHOTO HERE</p>
+          </div>
+          <div class="avatar-corner tl"></div>
+          <div class="avatar-corner br"></div>
+        </div>
+        <div class="about-text">
+          <div class="section-header">
+            <p class="section-label">// 01. about me</p>
+            <h2 class="section-title">The human<br>behind the app.</h2>
+          </div>
+          <div id="about-paragraphs"></div>
+          <div id="tech-grid" class="tech-grid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── PROJECTS ─────────────────────────────────────────── -->
+  <section id="projects">
+    <div class="section-wrap">
+      <div class="reveal section-header">
+        <p class="section-label">// 02. projects</p>
+        <h2 class="section-title">Things I've shipped.</h2>
+      </div>
+      <div id="projects-grid" class="projects-grid"></div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── EXPERIENCE ───────────────────────────────────────── -->
+  <section id="experience">
+    <div class="section-wrap">
+      <div class="reveal section-header">
+        <p class="section-label">// 03. experience</p>
+        <h2 class="section-title">Where I've built.</h2>
+      </div>
+      <div id="timeline" class="timeline reveal"></div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── CONTACT ──────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="section-wrap">
+      <div class="reveal contact-wrap">
+        <div>
+          <h2 class="contact-big">Let's build<br>something<br><span>together.</span></h2>
+          <p class="contact-sub">Open to freelance projects, collaborations, and full-time opportunities. I reply fast.</p>
+          <div id="contact-links" class="contact-links"></div>
+        </div>
+        <div>
+          <div class="contact-form">
+            <div class="form-field">
+              <label class="form-label">Your Name</label>
+              <input class="form-input" type="text" placeholder="Jane Smith">
+            </div>
+            <div class="form-field">
+              <label class="form-label">Email Address</label>
+              <input class="form-input" type="email" placeholder="jane@example.com">
+            </div>
+            <div class="form-field">
+              <label class="form-label">Message</label>
+              <textarea class="form-textarea" placeholder="Tell me about your project…"></textarea>
+            </div>
+            <div id="form-btn-wrap"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ───────────────────────────────────────────── -->
+  <footer>
+    <span id="footer-name" class="footer-name"></span>
+    <span id="footer-copy" class="footer-copy"></span>
+    <span id="footer-top"></span>
+  </footer>
+
+  <!-- ────────────────────────────────────────────────────────
+       SCRIPT LOAD ORDER (do not change):
+       1. theme.js   — injects CSS vars before any paint
+       2. data.js    — defines PORTFOLIO_DATA
+       3. components — card, buttons, indicators
+       4. main init  — inline below, orchestrates everything
+  ──────────────────────────────────────────────────────────── -->
+  <script src="theme.js"></script>
+  <script src="data.js"></script>
+  <script src="components/card.js"></script>
+  <script src="components/buttons.js"></script>
+  <script src="components/indicators.js"></script>
+
+  <script>
+  // ── RENDERERS ──────────────────────────────────────────────
+
+  function renderHero(p) {
+    document.title = p.name + ' — ' + p.role;
+
+    // Nav logo: initials + .dev
+    document.getElementById('nav-logo').textContent =
+      (p.initials || p.name.split(' ').map(w => w[0]).join('')).toLowerCase() + '.dev';
+
+    document.getElementById('hero-label').textContent = '// ' + p.role + ' · ' + p.location;
+
+    // Accent on last word of name
+    const parts = p.name.trim().split(' ');
+    const last  = parts.pop();
+    document.getElementById('hero-name').innerHTML =
+      parts.join(' ') + '<br>' + last + ' <span>.</span>';
+
+    document.getElementById('hero-sub').innerHTML =
+      p.tagline + '<span class="blink"></span>';
+
+    document.getElementById('hero-stack').textContent = p.stack;
+
+    // CTAs via buttons.js
+    document.getElementById('hero-ctas').innerHTML =
+      primaryButton({ label: 'View My Work', href: '#projects' }) +
+      (p.resumePDF
+        ? primaryButton({ label: 'Download Resume', href: p.resumePDF, download: true })
+        : ghostButton({ label: 'Get In Touch', href: '#contact' }));
+  }
+
+  function renderAbout(p, about) {
+    const box = document.getElementById('avatar-box');
+    if (p.photo) {
+      box.innerHTML = `<img src="${p.photo}" alt="${p.name}">`;
+    } else {
+      document.getElementById('avatar-initials').textContent =
+        p.initials || p.name.split(' ').map(w => w[0]).join('');
+    }
+
+    // Paragraphs (allow <strong> via innerHTML — content is author-controlled)
+    document.getElementById('about-paragraphs').innerHTML =
+      about.paragraphs.map(t => `<p>${t}</p>`).join('');
+
+    // Tech pills via indicators.js
+    document.getElementById('tech-grid').innerHTML =
+      about.techStack.map(techPill).join('');
+  }
+
+  function renderProjects(projects) {
+    const grid = document.getElementById('projects-grid');
+    grid.innerHTML = '';
+    projects.forEach((proj, i) => {
+      grid.appendChild(buildProjectCard(proj, i));   // card.js
+    });
+  }
+
+  function renderExperience(experience) {
+    const timeline = document.getElementById('timeline');
+    timeline.innerHTML = '';
+    experience.forEach(entry => {
+      timeline.appendChild(buildTimelineItem(entry)); // indicators.js
+    });
+  }
+
+  function renderContact(p) {
+    const rows = [];
+    if (p.email)    rows.push({ icon: '✉',  label: 'Email',    value: p.email,                                    href: 'mailto:' + p.email });
+    if (p.linkedin) rows.push({ icon: 'in', label: 'LinkedIn', value: p.linkedin.replace('https://',''),           href: p.linkedin });
+    if (p.github)   rows.push({ icon: '⌥',  label: 'GitHub',   value: p.github.replace('https://',''),             href: p.github });
+    if (p.twitter)  rows.push({ icon: '𝕏',  label: 'Twitter',  value: p.twitter.replace('https://',''),            href: p.twitter });
+    rows.push(       { icon: '📍', label: 'Location', value: p.location,                                           href: null });
+
+    document.getElementById('contact-links').innerHTML =
+      rows.map(contactLinkItem).join('');             // buttons.js
+
+    document.getElementById('form-btn-wrap').innerHTML =
+      formSubmitButton({ label: 'Send Message →' });  // buttons.js
+  }
+
+  function renderFooter(p) {
+    document.getElementById('footer-name').textContent = p.name;
+    document.getElementById('footer-copy').textContent =
+      '© ' + new Date().getFullYear() + ' · All rights reserved';
+    document.getElementById('footer-top').innerHTML = backToTopLink(); // buttons.js
+  }
+
+  // ── CONTACT FORM HANDLER ──────────────────────────────────
+  function handleContactForm(e) {
+    const btn = e.target;
+    btn.textContent  = 'Message Sent ✓';
+    btn.style.background = 'var(--accent-lime)';
+    btn.disabled = true;
+  }
+
+  // ── BOOT ──────────────────────────────────────────────────
+  (function init() {
+    const d = PORTFOLIO_DATA;
+    renderHero(d.personal);
+    renderAbout(d.personal, d.about);
+    renderProjects(d.projects);
+    renderExperience(d.experience);
+    renderContact(d.personal);
+    renderFooter(d.personal);
+
+    initCursor();       // indicators.js
+    initScrollReveal(); // indicators.js
+  })();
+  </script>
+
+</body>
+</html>
