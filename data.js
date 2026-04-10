@@ -20,7 +20,7 @@ const PORTFOLIO_DATA = {
     linkedin:  "https://linkedin.com/in/mohammad-hasan-shaikh",
     github:    "",          // e.g. "https://github.com/yourusername"
     twitter:   "",          // e.g. "https://twitter.com/yourusername"
-    photo:     "/assets/hasan.jpeg",          // e.g. "assets/photo.jpg"
+    photo:     "assets/hasan.jpeg",          // e.g. "assets/photo.jpg"
     resumePDF: "",          // e.g. "assets/resume.pdf"
   },
 
@@ -65,10 +65,10 @@ const PORTFOLIO_DATA = {
       description:  "A full-stack school & college discovery app with AI-based recommendations. Students can search, apply, and track institutions based on their preferences. Node.js backend on Hostinger VPS, Firebase for auth and real-time data.",
       stack:        ["Flutter", "Dart", "Node.js", "Firebase", "AI Recommendations"],
       accent:       "teal",
-      image:        "/assets/synzy/promo.png",        // e.g. "assets/synzy-promo.png"
+      image:        "assets/synzy/promo.png",        // e.g. "assets/synzy-promo.png"
       logo:         "",        // e.g. "assets/synzy-logo.png"
       emoji:        "🎓",
-      playStoreUrl: "",        // e.g. "https://play.google.com/store/apps/details?id=..."
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.TalentConnectExample.tc_sa",        // e.g. "https://play.google.com/store/apps/details?id=..."
       githubUrl:    "",
       demoUrl:      "",
     },
@@ -78,10 +78,10 @@ const PORTFOLIO_DATA = {
       description:  "A GPT-4o Mini powered chatbot with 50 free daily requests and optimized prompts for crisp responses. GetX state management and Firebase backend handle user sessions and auth seamlessly.",
       stack:        ["Flutter", "GetX", "OpenAI API", "Firebase"],
       accent:       "purple",
-      image:        "/assets/hex/promo.png",
+      image:        "assets/hex/promo.png",
       logo:         "",
       emoji:        "🤖",
-      playStoreUrl: "",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.HSN.hex_chatbot",
       githubUrl:    "",
       demoUrl:      "",
     },
@@ -91,10 +91,10 @@ const PORTFOLIO_DATA = {
       description:  "A feature-rich local music player with playlist creation, looping, and favourites. Background playback with notification controls makes it a proper daily driver, all persisted locally with SQLite.",
       stack:        ["Flutter", "GetX", "SQLite", "Background Audio"],
       accent:       "lime",
-      image:        "/assets/hasicx/promo.png",
+      image:        "assets/hasicx/promo.png",
       logo:         "",
       emoji:        "🎵",
-      playStoreUrl: "",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.HSN.hasicx",
       githubUrl:    "",
       demoUrl:      "",
     },
@@ -108,7 +108,7 @@ const PORTFOLIO_DATA = {
       logo:         "",
       emoji:        "🗜️",
       playStoreUrl: "https://play.google.com/store/apps/details?id=com.hasneticlabs.shrinkify",
-      indusUrl: "https://play.google.com/store/apps/details?id=com.hasneticlabs.shrinkify",
+      indusUrl: "https://www.indusappstore.com/apps/productivity/shrinkify/com.hasneticlabs.shrinkify",
       githubUrl:    "",
       demoUrl:      "",
     },
@@ -118,11 +118,11 @@ const PORTFOLIO_DATA = {
       description:  "QuroScanner is a powerful QR code scanner with a clean and user-friendly interface. With lightning-fast scanning and generation capabilities, QuroScanner is the perfect tool for all your QR code needs.",
       stack:        ["Flutter", "Dart", "Provider", "On-device"],
       accent:       "coral",
-      image:        "/assets/quroscanner/promo.png",
+      image:        "assets/quroscanner/promo.png",
       logo:         "",
       emoji:        "🗜️",
       playStoreUrl: "https://play.google.com/store/apps/details?id=com.HSN.QuroScanner",
-      indusUrl: "https://play.google.com/store/apps/details?id=com.hasneticlabs.shrinkify",
+      indusUrl: "https://www.indusappstore.com/apps/productivity/quroscanner/com.HSN.QuroScanner",
       githubUrl:    "",
       demoUrl:      "",
     },
@@ -132,11 +132,11 @@ const PORTFOLIO_DATA = {
       description:  "HasneX is a powerful and privacy-focused local video player designed to give you complete control over your viewing experience — beautifully, smoothly, and entirely offline.",
       stack:        ["Flutter", "Dart", "Provider", "On-device"],
       accent:       "coral",
-      image:        "/assets/hasnex/promo.png",
+      image:        "assets/hasnex/promo.png",
       logo:         "",
       emoji:        "🗜️",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.HSN.QuroScanner",
-      indusUrl: "https://play.google.com/store/apps/details?id=com.hasneticlabs.shrinkify",
+      playStoreUrl: "",//https://play.google.com/store/apps/details?id=com.hasneticlabs.hasnex
+      indusUrl: "",
       githubUrl:    "",
       demoUrl:      "",
     },
@@ -146,11 +146,11 @@ const PORTFOLIO_DATA = {
       description:  "Meet Drop!t — your instant space to save anything in seconds.\nLinks, notes, text & images… just drop them in and they’re stored safely on your device. No cloud, no accounts, no waiting. Everything stays local, fast, and fully in your control.",
       stack:        ["Flutter", "Dart", "Provider", "On-device"],
       accent:       "coral",
-      image:        "/assets/dropit/promo.png",
+      image:        "assets/dropit/promo.png",
       logo:         "",
       emoji:        "🗜️",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.HSN.QuroScanner",
-      indusUrl: "https://play.google.com/store/apps/details?id=com.hasneticlabs.shrinkify",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.hasneticlabs.drop_it",
+      indusUrl: "",
       githubUrl:    "",
       demoUrl:      "",
     },
