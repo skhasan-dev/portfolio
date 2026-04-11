@@ -76,7 +76,7 @@ function buildCardActions(project) {
     actions += `
       <a href="${esc(project.playStoreUrl)}" target="_blank" rel="noopener noreferrer"
           aria-label="Get ${esc(project.name)} on Google Play">
-        <image src="/assets/playstore.png" alt="Google Play Store" height="40">
+        <image src="assets/playstore.png" alt="Google Play Store" height="40">
       </a>`;
   }
 
@@ -84,7 +84,7 @@ function buildCardActions(project) {
     actions += `
       <a href="${esc(project.indusUrl)}" target="_blank" rel="noopener noreferrer"
           aria-label="Get ${esc(project.name)} on Google Play">
-        <image src="/assets/indus.png" alt="Google Play Store" height="40">
+        <image src="assets/indus.png" alt="Google Play Store" height="40">
       </a>`;
   }
 

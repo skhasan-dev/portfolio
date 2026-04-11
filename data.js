@@ -18,10 +18,10 @@ const PORTFOLIO_DATA = {
     email:     "skhasan2829@gmail.com",
     phone:     "+91 8291789902",
     linkedin:  "https://linkedin.com/in/mohammad-hasan-shaikh",
-    github:    "",          // e.g. "https://github.com/yourusername"
+    github:    "https://github.com/skhasan-dev",          // e.g. "https://github.com/yourusername"
     twitter:   "",          // e.g. "https://twitter.com/yourusername"
     photo:     "assets/hasan.jpeg",          // e.g. "assets/photo.jpg"
-    resumePDF: "",          // e.g. "assets/resume.pdf"
+    resumePDF: "assets/Mohamad-Hasan-Shaikh.pdf",          // e.g. "assets/resume.pdf"
   },
 
   // ── ABOUT ─────────────────────────────────────────────────
@@ -54,10 +54,7 @@ const PORTFOLIO_DATA = {
   //  playStoreUrl — Set "" to hide the badge
   //  githubUrl    — Set "" to hide the button
   //  demoUrl      — Set "" to hide the button
-  //
-  //  HOW TO ADD A PROJECT:
-  //  Copy the template block at the bottom, fill in fields, add a comma.
-  //
+
   projects: [
     {
       name:         "Synzy",
@@ -65,10 +62,10 @@ const PORTFOLIO_DATA = {
       description:  "A full-stack school & college discovery app with AI-based recommendations. Students can search, apply, and track institutions based on their preferences. Node.js backend on Hostinger VPS, Firebase for auth and real-time data.",
       stack:        ["Flutter", "Dart", "Node.js", "Firebase", "AI Recommendations"],
       accent:       "teal",
-      image:        "assets/synzy/promo.png",        // e.g. "assets/synzy-promo.png"
+      image:        "assets/synzy/promo.png",
       logo:         "",        // e.g. "assets/synzy-logo.png"
       emoji:        "🎓",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.TalentConnectExample.tc_sa",        // e.g. "https://play.google.com/store/apps/details?id=..."
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.TalentConnectExample.tc_sa",
       githubUrl:    "",
       demoUrl:      "",
     },
@@ -135,7 +132,7 @@ const PORTFOLIO_DATA = {
       image:        "assets/hasnex/promo.png",
       logo:         "",
       emoji:        "🗜️",
-      playStoreUrl: "",//https://play.google.com/store/apps/details?id=com.hasneticlabs.hasnex
+      playStoreUrl: "", //https://play.google.com/store/apps/details?id=com.hasneticlabs.hasnex
       indusUrl: "",
       githubUrl:    "",
       demoUrl:      "",
