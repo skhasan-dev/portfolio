@@ -132,7 +132,7 @@ const PORTFOLIO_DATA = {
       image:        "assets/hasnex/promo.png",
       logo:         "",
       emoji:        "🗜️",
-      playStoreUrl: "", //https://play.google.com/store/apps/details?id=com.hasneticlabs.hasnex
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.hasneticlabs.hasnex", 
       indusUrl: "",
       githubUrl:    "",
       demoUrl:      "",
