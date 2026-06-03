@@ -46,32 +46,6 @@ I enjoy creating performant, scalable, and user-friendly applications with clean
 
 ---
 
-## 💼 Experience
-
-### Flutter Developer — Wybrid
-**Aug 2025 – Present**
-
-- Developing and maintaining a real estate digitalization platform
-- Building scalable Flutter architecture using Provider
-- Implementing real-time features with WebSockets
-- Contributing to product roadmap and architecture decisions
-
-### Flutter Developer Intern — Wybrid
-**Apr 2025 – Jul 2025**
-
-- Worked on core product development
-- Integrated REST APIs and state management solutions
-- Earned full-time offer through performance
-
-### Flutter Developer Intern — TalentConnect: Campus To Cubicle
-**Jan 2025 – Apr 2025**
-
-- Built Synzy from backend to mobile
-- Developed AI-powered recommendation systems
-- Deployed Node.js backend services
-
----
-
 ## 📱 Featured Apps
 
 ### 🎓 Synzy
@@ -120,22 +94,6 @@ Offline video player focused on performance and privacy.
 Save links, notes, images, and text locally with one tap.
 
 **Tech:** Flutter • Provider
-
----
-
-## 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=skhasan-dev&show_icons=true&theme=tokyonight" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=skhasan-dev&theme=tokyonight" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=skhasan-dev&layout=compact&theme=tokyonight" />
-</p>
 
 ---
 
