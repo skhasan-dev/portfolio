@@ -1,194 +1,267 @@
 // ============================================================
 //  DATA.JS — Your portfolio content
 //  This is the ONLY file you need to edit day-to-day.
-//  Add projects, experience, or update personal info here.
 //  Save → refresh browser. Everything auto-renders.
+//
+//  RULE: any field marked `"" hides ...` or `null hides ...` is
+//  optional — leave it empty to hide that piece of UI cleanly.
+//  Nothing renders as broken/empty when a field is missing.
 // ============================================================
 
 const PORTFOLIO_DATA = {
 
   // ── PERSONAL INFO ─────────────────────────────────────────
   personal: {
-    name:      "Mohamad Hasan Shaikh",
-    initials:  "HS",
-    role:      "Flutter Developer",
+    name:      "Hasan Shaikh",       // used in hero letters, doc title, footer, nav monogram fallback
+    initials:  "HS",                 // nav monogram
+    role:      "Flutter Developer",  // hero role line
     location:  "Mumbai, India",
-    tagline:   "I build performant, pixel-perfect Flutter apps — from real estate platforms to AI-powered discovery tools.",
-    stack:     "Flutter · Dart · Provider · REST APIs · Firebase · Node.js",
+
+    eyebrowYear: "Field notes — 2026",  // hero eyebrow text
+
+    // Small handwritten sticky-note tag under the hero name. "" hides it entirely.
+    // NOTE: reflects real availability — update whenever this changes.
+    pinNote: "open to freelance Flutter work →",
+
+    // 3-line hero intro. Migrated/condensed from the old About paragraphs.
+    lead: "Flutter developer building real-time booking platforms, AI-powered discovery apps, and privacy-first tools that run entirely on-device.",
+
     email:     "skhasan2829@gmail.com",
-    phone:     "+91 8291789902",
     linkedin:  "https://linkedin.com/in/mohammad-hasan-shaikh",
-    github:    "https://github.com/skhasan-dev",          // e.g. "https://github.com/yourusername"
-    twitter:   "",          // e.g. "https://twitter.com/yourusername"
-    photo:     "assets/hasan.jpeg",          // e.g. "assets/photo.jpg"
-    resumePDF: "assets/Mohamad-Hasan-Shaikh.pdf",          // e.g. "assets/resume.pdf"
+    github:    "https://github.com/skhasan-dev",
+    twitter:   "",   // "" hides the Twitter/X icon (nav has none; contact social row hides it)
+    resumePDF: "assets/Mohamad-Hasan-Shaikh.pdf",  // "" hides the résumé nav icon + résumé strip in Experience
   },
 
-  // ── ABOUT ─────────────────────────────────────────────────
-  about: {
-    // You can use <strong> tags inside paragraphs
-    paragraphs: [
-      "I'm a <strong>Flutter Developer based in Mumbai</strong>, currently building the Wybrid real estate platform full-time — a product that lets businesses book office spaces and meeting rooms in real-time.",
-      "I've been writing Flutter code professionally since early 2025, shipping everything from AI-powered college discovery apps to music players with background playback. I care deeply about <strong>clean architecture, smooth UX, and code that scales</strong>.",
-      "At 19, I hold a Diploma in Computer Engineering with distinction from Government Polytechnic, Mumbai — and I've been building full-stack apps since before I graduated.",
-    ],
-    techStack: [
-      "Flutter", "Dart", "Provider", "GetX",
-      "REST APIs", "WebSockets", "Firebase",
-      "Node.js", "SQLite", "MongoDB", "Git", "Postman",
-    ],
+  // ── NAV LINKS ──────────────────────────────────────────────
+  // Center nav zone. Edit label/href here — never in index.html.
+  navLinks: [
+    { label: "About",      href: "#about" },
+    { label: "Stack",      href: "#skills" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects",   href: "#projects" },
+  ],
+
+  // ── SECTION COPY ───────────────────────────────────────────
+  // Eyebrow / title / sub-caption for every section below the hero.
+  // "sub" may be left "" to hide the sub-caption line.
+  sections: {
+    about: {
+      eyebrow: "02 · About",
+      title:   "The work so far, reduced to numbers.",
+      sub:     "The rest is in the work below.",
+    },
+    skills: {
+      eyebrow: "03 · Stack",
+      title:   "Open the drawer.",
+      sub:     "Four categories, tap one to open it.",
+    },
+    projects: {
+      eyebrow: "04 · Work",
+      title:   "7 projects, briefly.",
+      sub:     "Apps I've designed, built, and shipped — solo and at work. Drag or scroll sideways to explore.",
+    },
+    experience: {
+      eyebrow: "05 · Experience",
+      title:   "Career timeline",
+      sub:     "The résumé version, for the people who need to scan it fast.",
+    },
+    testimonials: {
+      eyebrow: "06 · Feedback",
+      title:   "What people say.",
+      sub:     "",
+    },
+    contact: {
+      eyebrow: "07 · Contact",
+      title:   "Let's build something worth shipping.",
+      sub:     "Open to freelance Flutter work and full-time opportunities. Usually reply within a day.",
+    },
   },
+
+  // ── ABOUT — 6 number-driven fact cards (no prose, by design) ──
+  //  FIELDS: number (big display value), highlight (the one bolded
+  //  red word in the label), rest (remaining label text).
+  //  Order = display order = "pg. 01" through "pg. 06".
+  about: [
+    { number: "1.5+",   highlight: "Years",       rest: "shipping Flutter apps" },
+    { number: "7",      highlight: "Apps",        rest: "published on the Play Store" },
+    { number: "4",      highlight: "On-device",   rest: "apps — zero cloud, zero uploads" },
+    { number: "87.17%", highlight: "Distinction", rest: "in Computer Engineering" },
+    { number: "3",      highlight: "Roles",       rest: "held across two companies" },
+    { number: "19",     highlight: "Years old",   rest: "when the distinction landed" },
+  ],
+
+  // ── SKILLS — tabbed categories ─────────────────────────────
+  //  FIELDS: tab (button label), folderTag (small caption inside
+  //  the open panel), tools (array of pill labels).
+  skills: [
+    {
+      tab: "Core",
+      folderTag: "folder 01 — core languages",
+      tools: ["Flutter", "Dart"],
+    },
+    {
+      tab: "State & Data",
+      folderTag: "folder 02 — state & local data",
+      tools: ["Provider", "GetX", "SQLite", "MongoDB"],
+    },
+    {
+      tab: "Backend",
+      folderTag: "folder 03 — backend & apis",
+      tools: ["Node.js", "Firebase", "REST APIs", "WebSockets"],
+    },
+    {
+      tab: "Tooling",
+      folderTag: "folder 04 — tooling",
+      tools: ["Git", "Postman"],
+    },
+  ],
+
+  // ── PROJECT FILTERS — drives the filter row ────────────────
+  //  `id` must match a project's `category` field. "all" is implicit.
+  projectFilters: [
+    { id: "ai",      label: "AI & Backend" },
+    { id: "media",   label: "Media" },
+    { id: "utility", label: "Utilities" },
+  ],
 
   // ── PROJECTS ──────────────────────────────────────────────
   //
   //  FIELDS:
   //  name         — App name
-  //  tagline      — One-line subtitle (shown in teal below name)
-  //  description  — 2–3 sentences of detail
+  //  category     — Must match a projectFilters id above
+  //  tag          — Short handwritten tag on the card (e.g. "AI chatbot")
+  //  techBadge    — { text: 2-letter monogram, logo: path to real logo }
+  //                 logo "" falls back to the text monogram
+  //  description  — 1–2 sentences
   //  stack        — Array of tech label strings
-  //  accent       — Card color: "teal" | "lime" | "purple" | "coral" | "blue" | "amber"
-  //                 (add new accents in theme.js → accents)
-  //  image        — Path to promo screenshot. Leave "" to show placeholder.
-  //  logo         — Path to app icon/logo. Leave "" to show emoji fallback.
-  //  emoji        — Fallback icon when no logo is set
-  //  playStoreUrl — Set "" to hide the badge
-  //  githubUrl    — Set "" to hide the button
-  //  demoUrl      — Set "" to hide the button
-
+  //  result       — Headline metric shown as a hover "stamp". "" hides it.
+  //                 RECOMMENDED for stronger credibility — none of these
+  //                 have one yet; add a real number (installs, rating,
+  //                 users) as soon as you have one worth showing.
+  //  githubUrl    — "" hides the GitHub pill.
+  //                 RECOMMENDED — none of these repos are public yet;
+  //                 making even one public strengthens the section.
+  //  primaryLink  — { label, url } — the main CTA pill. null hides it.
+  //
   projects: [
     {
-      name:         "Synzy",
-      tagline:      "College Discovery Platform",
-      description:  "A full-stack school & college discovery app with AI-based recommendations. Students can search, apply, and track institutions based on their preferences. Node.js backend on Hostinger VPS, Firebase for auth and real-time data.",
-      stack:        ["Flutter", "Dart", "Node.js", "Firebase", "AI Recommendations"],
-      accent:       "teal",
-      image:        "assets/synzy/promo.png",
-      logo:         "",        // e.g. "assets/synzy-logo.png"
-      emoji:        "🎓",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.TalentConnectExample.tc_sa",
-      githubUrl:    "",
-      demoUrl:      "",
+      name:        "Synzy",
+      category:    "ai",
+      tag:         "AI + college discovery",
+      techBadge:   { text: "SY", logo: "" },
+      description: "A full-stack school & college discovery app with AI-based recommendations — students search, apply, and track institutions based on their preferences. Node.js backend on a VPS, Firebase for auth and real-time data.",
+      stack:       ["Flutter", "Dart", "Node.js", "Firebase", "AI Recommendations"],
+      result:      "",
+      githubUrl:   "",
+      primaryLink: { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.TalentConnectExample.tc_sa" },
     },
     {
-      name:         "Hex Chatbot",
-      tagline:      "AI-Powered Chat App",
-      description:  "A GPT-4o Mini powered chatbot with 50 free daily requests and optimized prompts for crisp responses. GetX state management and Firebase backend handle user sessions and auth seamlessly.",
-      stack:        ["Flutter", "GetX", "OpenAI API", "Firebase"],
-      accent:       "purple",
-      image:        "assets/hex/promo.png",
-      logo:         "",
-      emoji:        "🤖",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.HSN.hex_chatbot",
-      githubUrl:    "",
-      demoUrl:      "",
+      name:        "Hex Chatbot",
+      category:    "ai",
+      tag:         "AI chatbot",
+      techBadge:   { text: "HX", logo: "" },
+      description: "A GPT-4o Mini powered chatbot with 50 free daily requests and prompts tuned for crisp responses. GetX state management and Firebase handle sessions and auth.",
+      stack:       ["Flutter", "GetX", "OpenAI API", "Firebase"],
+      result:      "",
+      githubUrl:   "",
+      primaryLink: { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.HSN.hex_chatbot" },
     },
     {
-      name:         "HasicX",
-      tagline:      "Music Player App",
-      description:  "A feature-rich local music player with playlist creation, looping, and favourites. Background playback with notification controls makes it a proper daily driver, all persisted locally with SQLite.",
-      stack:        ["Flutter", "GetX", "SQLite", "Background Audio"],
-      accent:       "lime",
-      image:        "assets/hasicx/promo.png",
-      logo:         "",
-      emoji:        "🎵",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.HSN.hasicx",
-      githubUrl:    "",
-      demoUrl:      "",
+      name:        "HasicX",
+      category:    "media",
+      tag:         "music player",
+      techBadge:   { text: "HC", logo: "" },
+      description: "A feature-rich local music player with playlists, looping, and favourites. Background playback with notification controls, everything persisted locally with SQLite.",
+      stack:       ["Flutter", "GetX", "SQLite", "Background Audio"],
+      result:      "",
+      githubUrl:   "",
+      primaryLink: { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.HSN.hasicx" },
     },
     {
-      name:         "Shrinkify",
-      tagline:      "Image Compressor",
-      description:  "A fully local image compression utility with zero server dependency. Supports batch compression with customizable quality settings — no uploads, no privacy concerns, all on-device.",
-      stack:        ["Flutter", "Dart", "Provider", "On-device"],
-      accent:       "coral",
-      image:        "assets/shrinkify/promo.png",
-      logo:         "",
-      emoji:        "🗜️",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.hasneticlabs.shrinkify",
-      indusUrl: "https://www.indusappstore.com/apps/productivity/shrinkify/com.hasneticlabs.shrinkify",
-      githubUrl:    "",
-      demoUrl:      "",
+      name:        "Shrinkify",
+      category:    "utility",
+      tag:         "on-device tool",
+      techBadge:   { text: "SK", logo: "" },
+      description: "A fully local image compression utility with zero server dependency — batch compression with customizable quality, no uploads, no privacy concerns.",
+      stack:       ["Flutter", "Dart", "Provider", "On-device"],
+      result:      "",
+      githubUrl:   "",
+      primaryLink: { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.hasneticlabs.shrinkify" },
     },
     {
-      name:         "QuroScanner",
-      tagline:      "Scan & Generate QR Codes",
-      description:  "QuroScanner is a powerful QR code scanner with a clean and user-friendly interface. With lightning-fast scanning and generation capabilities, QuroScanner is the perfect tool for all your QR code needs.",
-      stack:        ["Flutter", "Dart", "Provider", "On-device"],
-      accent:       "coral",
-      image:        "assets/quroscanner/promo.png",
-      logo:         "",
-      emoji:        "🗜️",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.HSN.QuroScanner",
-      indusUrl: "https://www.indusappstore.com/apps/productivity/quroscanner/com.HSN.QuroScanner",
-      githubUrl:    "",
-      demoUrl:      "",
+      name:        "QuroScanner",
+      category:    "utility",
+      tag:         "QR scanner",
+      techBadge:   { text: "QS", logo: "" },
+      description: "A clean, fast QR code scanner and generator built for everyday use — lightning-quick scanning with a user-friendly interface.",
+      stack:       ["Flutter", "Dart", "Provider", "On-device"],
+      result:      "",
+      githubUrl:   "",
+      primaryLink: { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.HSN.QuroScanner" },
     },
     {
-      name:         "HasneX",
-      tagline:      "Video Player App",
-      description:  "HasneX is a powerful and privacy-focused local video player designed to give you complete control over your viewing experience — beautifully, smoothly, and entirely offline.",
-      stack:        ["Flutter", "Dart", "Provider", "On-device"],
-      accent:       "coral",
-      image:        "assets/hasnex/promo.png",
-      logo:         "",
-      emoji:        "🗜️",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.hasneticlabs.hasnex", 
-      indusUrl: "",
-      githubUrl:    "",
-      demoUrl:      "",
+      name:        "HasneX",
+      category:    "media",
+      tag:         "video player",
+      techBadge:   { text: "HN", logo: "" },
+      description: "A privacy-focused local video player designed to give complete control over the viewing experience — smooth, offline, and entirely on-device.",
+      stack:       ["Flutter", "Dart", "Provider", "On-device"],
+      result:      "",
+      githubUrl:   "",
+      primaryLink: { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.hasneticlabs.hasnex" },
     },
     {
-      name:         "Drop!t",
-      tagline:      "Share to Save",
-      description:  "Meet Drop!t — your instant space to save anything in seconds.\nLinks, notes, text & images… just drop them in and they’re stored safely on your device. No cloud, no accounts, no waiting. Everything stays local, fast, and fully in your control.",
-      stack:        ["Flutter", "Dart", "Provider", "On-device"],
-      accent:       "coral",
-      image:        "assets/dropit/promo.png",
-      logo:         "",
-      emoji:        "🗜️",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.hasneticlabs.drop_it",
-      indusUrl: "",
-      githubUrl:    "",
-      demoUrl:      "",
+      name:        "Drop!t",
+      category:    "utility",
+      tag:         "save anything",
+      techBadge:   { text: "DT", logo: "" },
+      description: "An instant space to save anything in seconds — links, notes, text and images stored safely on-device. No cloud, no accounts, no waiting.",
+      stack:       ["Flutter", "Dart", "Provider", "On-device"],
+      result:      "",
+      githubUrl:   "",
+      primaryLink: { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.hasneticlabs.drop_it" },
     },
 
     // ── ADD NEW PROJECT ─────────────────────────────────────
     // {
-    //   name:         "My New App",
-    //   tagline:      "One-line description",
-    //   description:  "2–3 sentences about what it does and why it matters.",
-    //   stack:        ["Flutter", "Firebase"],
-    //   accent:       "blue",
-    //   image:        "",
-    //   logo:         "",
-    //   emoji:        "🚀",
-    //   playStoreUrl: "",
-    //   githubUrl:    "",
-    //   demoUrl:      "",
+    //   name:        "My New App",
+    //   category:    "utility",              // must match a projectFilters id
+    //   tag:         "one-line tag",
+    //   techBadge:   { text: "MN", logo: "" },
+    //   description: "What it does and why it matters.",
+    //   stack:       ["Flutter", "Firebase"],
+    //   result:      "",                     // e.g. "4.8★ · 10k+"
+    //   githubUrl:   "",
+    //   primaryLink: { label: "Play Store", url: "" },
     // },
   ],
 
-  // ── EXPERIENCE ────────────────────────────────────────────
+  // ── EXPERIENCE — unified work + education timeline ─────────
   //
   //  FIELDS:
-  //  type     — "work" or "education" (affects dot color on timeline)
+  //  type     — "work" or "education" (kept for future use; the
+  //             timeline row itself renders identically for both)
   //  period   — Date range string
   //  role     — Job title or degree name
-  //  company  — Company or institution name
-  //  badge    — Optional pill label (e.g. "FULL-TIME", "87% · DISTINCTION"). Set "" to hide.
-  //  points   — Array of bullet strings. Use [] for education entries without bullets.
+  //  org      — Company or institution name
+  //  location — Shown as the small pill on the row. "" hides it.
+  //  points   — Bullet detail. KEPT in the data for future use
+  //             (e.g. résumé generation) but NOT rendered in the
+  //             new timeline row — that format only has room for
+  //             period/role/org/location.
   //
-  //  HOW TO ADD AN ENTRY:
-  //  Copy the template block at the bottom, fill in fields, add a comma.
-  //  Entries render top-to-bottom in the order they appear here.
+  //  Newest first. The timeline shows the first 3 and reveals the
+  //  rest in chunks of 3 — this is index-based and length-agnostic,
+  //  so adding a 6th or 10th entry needs no code changes.
   //
   experience: [
     {
-      type:    "work",
-      period:  "Aug 2025 – Present",
-      role:    "Flutter Developer",
-      company: "Wybrid",
-      badge:   "FULL-TIME",
+      type:     "work",
+      period:   "Aug 2025 – Present",
+      role:     "Flutter Developer",
+      org:      "Wybrid",
+      location: "Mumbai, India",
       points: [
         "Developing and maintaining the Wybrid real estate digitalization platform — renting office spaces, meeting rooms, and pantry facilities.",
         "Architecting Flutter apps with Provider state management for scalable, maintainable codebases.",
@@ -197,11 +270,11 @@ const PORTFOLIO_DATA = {
       ],
     },
     {
-      type:    "work",
-      period:  "Apr 2025 – Jul 2025",
-      role:    "Flutter Developer Intern",
-      company: "Wybrid",
-      badge:   "",
+      type:     "work",
+      period:   "Apr 2025 – Jul 2025",
+      role:     "Flutter Developer Intern",
+      org:      "Wybrid",
+      location: "Mumbai, India",
       points: [
         "Contributed to core Flutter development of the Wybrid platform from day one.",
         "Worked with Provider state management and REST API integrations.",
@@ -209,11 +282,11 @@ const PORTFOLIO_DATA = {
       ],
     },
     {
-      type:    "work",
-      period:  "Jan 2025 – Apr 2025",
-      role:    "Flutter Developer Intern",
-      company: "Talent Connect: Campus to Cubicle",
-      badge:   "",
+      type:     "work",
+      period:   "Jan 2025 – Apr 2025",
+      role:     "Flutter Developer Intern",
+      org:      "Talent Connect: Campus to Cubicle",
+      location: "Mumbai, India",
       points: [
         "Built Synzy — a full-fledged school & college discovery app, end-to-end from backend to mobile.",
         "Implemented AI-based college recommendation system tailored to student preferences.",
@@ -221,34 +294,53 @@ const PORTFOLIO_DATA = {
       ],
     },
     {
-      type:    "education",
-      period:  "2022 – 2025",
-      role:    "Diploma in Computer Engineering",
-      company: "Government Polytechnic, Mumbai",
-      badge:   "87.17% · DISTINCTION",
-      points:  [],
+      type:     "education",
+      period:   "2022 – 2025",
+      role:     "Diploma in Computer Engineering",
+      org:      "Government Polytechnic, Mumbai",
+      location: "87.17% · Distinction",
+      points: [],
     },
     {
-      type:    "education",
-      period:  "2021 – 2022",
-      role:    "SSC",
-      company: "Sacred Heart Boys High School",
-      badge:   "83.40%",
-      points:  [],
+      type:     "education",
+      period:   "2021 – 2022",
+      role:     "SSC",
+      org:      "Sacred Heart Boys High School",
+      location: "83.40%",
+      points: [],
     },
 
-    // ── ADD NEW EXPERIENCE ──────────────────────────────────
+    // ── ADD NEW ENTRY ────────────────────────────────────────
     // {
-    //   type:    "work",
-    //   period:  "Month Year – Month Year",
-    //   role:    "Your Role Title",
-    //   company: "Company Name",
-    //   badge:   "FULL-TIME",
-    //   points: [
-    //     "What you built or shipped.",
-    //     "Impact or technology used.",
-    //   ],
+    //   type:     "work",
+    //   period:   "Month Year – Month Year",
+    //   role:     "Your Role Title",
+    //   org:      "Company Name",
+    //   location: "City, Country",
+    //   points: ["What you built or shipped."],
     // },
+  ],
+
+  // ── TESTIMONIALS ───────────────────────────────────────────
+  //  PLACEHOLDER CONTENT — replace with real quotes before launch.
+  //  Leave this array empty ( testimonials: [] ) to hide the whole
+  //  section cleanly — it renders nothing when there's nothing here.
+  testimonials: [
+    {
+      quote:   "Hasan picked up the Wybrid codebase fast and shipped the real-time booking flow ahead of schedule — clean architecture, no hand-holding needed.",
+      name:    "Engineering Lead",
+      context: "Wybrid — PLACEHOLDER, replace with a real quote",
+    },
+    {
+      quote:   "Built Synzy end-to-end — backend, AI recommendations, mobile app — in a few months as an intern. Rare initiative for that stage.",
+      name:    "Founder",
+      context: "Talent Connect: Campus to Cubicle — PLACEHOLDER, replace with a real quote",
+    },
+    {
+      quote:   "QuroScanner is the fastest, cleanest QR scanner I've used — does exactly what it says with none of the clutter.",
+      name:    "Play Store review",
+      context: "QuroScanner user — PLACEHOLDER, replace with a real quote",
+    },
   ],
 
 };
