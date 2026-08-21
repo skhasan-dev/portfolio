@@ -63,7 +63,7 @@ header.nav.scrolled .nav-pill{background:linear-gradient(135deg,rgba(255,255,255
 .nav-icon-btn svg{width:20px;height:20px;fill:var(--ink);stroke:none;}
 
 /* ── HERO ────────────────────────────────────────────────── */
-.hero{padding-top:200px;padding-bottom:100px;padding-left:32px;padding-right:32px;position:relative;overflow:hidden;box-sizing:border-box;min-height:100vh;}
+.hero{padding-top:125px;padding-bottom:25px;padding-left:32px;padding-right:32px;position:relative;overflow:hidden;box-sizing:border-box;min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
 .hero-blob{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;}
 .hero-blob-1{width:460px;height:460px;top:-160px;left:50%;transform:translateX(-50%);background:rgba(190,190,187,0.55);}
 .hero-blob-2{width:360px;height:360px;top:260px;right:-80px;background:rgba(205,205,202,0.4);}

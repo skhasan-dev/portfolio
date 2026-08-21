@@ -17,7 +17,7 @@ const PORTFOLIO_DATA = {
     role:      "Flutter Developer",  // hero role line
     location:  "Mumbai, India",
 
-    eyebrowYear: "Field notes — 2026",  // hero eyebrow text
+    eyebrowYear: "",  // hero eyebrow text
 
     // Small handwritten sticky-note tag under the hero name. "" hides it entirely.
     // NOTE: reflects real availability — update whenever this changes.
