@@ -55,15 +55,50 @@ function initExperienceTimeline() {
   let visibleCount = Math.min(EXPERIENCE_CHUNK, rows.length);
 
   function updateLines() {
-    const visible = rows.filter(r => !r.classList.contains('tl-hidden'));
-    rows.forEach(r => {
+    rows.forEach((r, i) => {
       const line = r.querySelector('.tl-line');
-      if (line) line.style.display = (r === visible[visible.length - 1]) ? 'none' : '';
+      if (line) line.style.display = (i === visibleCount - 1) ? 'none' : '';
     });
   }
 
-  function apply() {
-    rows.forEach((r, i) => r.classList.toggle('tl-hidden', i >= visibleCount));
+  /**
+   * setRowHidden(row, hidden, animate)
+   * Animated collapse/expand needs the row's max-height pinned to its
+   * real pixel height (not a fixed guess) before the transition starts —
+   * otherwise the row jumps open instantly and the rest of the
+   * transition plays out invisibly. The offsetHeight read forces a
+   * layout flush so the pinned value actually paints before the target
+   * value is set, which is what makes the transition interpolate at all.
+   */
+  function setRowHidden(row, hidden, animate) {
+    const isHidden = row.classList.contains('tl-hidden');
+    if (hidden === isHidden) return;
+
+    if (!animate) {
+      row.style.maxHeight = '';
+      row.classList.toggle('tl-hidden', hidden);
+      return;
+    }
+
+    if (hidden) {
+      row.style.maxHeight = row.scrollHeight + 'px';
+      row.offsetHeight;
+      row.classList.add('tl-hidden');
+      row.style.maxHeight = '0px';
+    } else {
+      row.classList.remove('tl-hidden');
+      row.style.maxHeight = '0px';
+      row.offsetHeight;
+      row.style.maxHeight = row.scrollHeight + 'px';
+    }
+
+    row.addEventListener('transitionend', function onEnd(e) {
+      if (e.propertyName === 'max-height') row.style.maxHeight = '';
+    }, { once: true });
+  }
+
+  function apply(animate) {
+    rows.forEach((r, i) => setRowHidden(r, i >= visibleCount, animate));
     updateLines();
     const label = toggle.querySelector('.label');
     const remaining = rows.length - visibleCount;
@@ -84,8 +119,8 @@ function initExperienceTimeline() {
       visibleCount = (visibleCount >= rows.length)
         ? Math.min(EXPERIENCE_CHUNK, rows.length)
         : Math.min(visibleCount + EXPERIENCE_CHUNK, rows.length);
-      apply();
+      apply(true);
     });
   }
-  apply();
+  apply(false);
 }
