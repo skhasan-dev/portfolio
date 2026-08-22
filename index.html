@@ -73,15 +73,13 @@
   <!-- ────────────────────────────────────────────────────────
        SCRIPT LOAD ORDER (do not change):
        1. theme.js            — injects CSS vars before any paint
-       2. data.js              — defines PORTFOLIO_DATA
-       3. components/utils.js  — shared escapeHtml()
-       4. components/buttons.js— generic button/icon builders
-       5. components/reveal.js — shared scroll-entrance helper
-       6. components/*.js      — one file per section
-       7. main init            — inline below, orchestrates everything
+       2. components/utils.js  — shared escapeHtml()
+       3. components/buttons.js— generic button/icon builders
+       4. components/reveal.js — shared scroll-entrance helper
+       5. components/*.js      — one file per section
+       6. main init            — inline below, fetches data.json then orchestrates everything
   ──────────────────────────────────────────────────────────── -->
   <script src="theme.js"></script>
-  <script src="data.js"></script>
   <script src="components/utils.js"></script>
   <script src="components/buttons.js"></script>
   <script src="components/reveal.js"></script>
@@ -101,8 +99,19 @@
       `;
     }
 
-    (function init() {
-      const d = PORTFOLIO_DATA;
+    async function init() {
+      let d;
+      try {
+        // no-store: data.json is overwritten in place on every Publish, so a
+        // cached copy would silently show stale content to returning visitors.
+        const res = await fetch('data.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`data.json request failed (${res.status})`);
+        d = await res.json();
+      } catch (err) {
+        console.error('Failed to load portfolio data:', err);
+        document.body.innerHTML = '<p style="padding:48px;font-family:sans-serif;color:#6B6B6B;">Unable to load portfolio content right now. Please try again shortly.</p>';
+        return;
+      }
 
       document.title = d.personal.name + ' — ' + d.personal.role;
 
@@ -134,7 +143,9 @@
       registerSectionEntrance('experience', 'exp-anim', 0.15);
       registerSectionEntrance('testimonials', 'testi-anim', 0.2);
       registerSectionEntrance('contact', 'contact-anim', 0.15);
-    })();
+    }
+
+    init();
   </script>
 
 </body>
