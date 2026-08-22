@@ -110,18 +110,6 @@
       ]
     },
     {
-      "tab": "Core",
-      "folderTag": "folder 01 — core languages",
-      "tools": [
-        {
-          "label": "Flutter"
-        },
-        {
-          "label": "Dart"
-        }
-      ]
-    },
-    {
       "tab": "State & Data",
       "folderTag": "folder 02 — state & local data",
       "tools": [
