@@ -52,6 +52,11 @@
       "title": "Career timeline",
       "sub": "The résumé version, for the people who need to scan it fast."
     },
+    "testimonials": {
+      "eyebrow": "06 · Feedback",
+      "title": "What people say.",
+      "sub": ""
+    },
     "contact": {
       "eyebrow": "07 · Contact",
       "title": "Let's build something worth shipping.",
@@ -106,6 +111,18 @@
         },
         {
           "label": "WebSockets"
+        }
+      ]
+    },
+    {
+      "tab": "Core",
+      "folderTag": "folder 01 — core languages",
+      "tools": [
+        {
+          "label": "Flutter"
+        },
+        {
+          "label": "Dart"
         }
       ]
     },
@@ -178,6 +195,28 @@
       }
     },
     {
+      "name": "QuroScanner",
+      "category": "utility",
+      "tag": "QR scanner",
+      "techBadge": {
+        "text": "QS",
+        "logo": ""
+      },
+      "description": "A clean, fast QR code scanner and generator built for everyday use — lightning-quick scanning with a user-friendly interface.",
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Provider",
+        "On-device"
+      ],
+      "result": "",
+      "githubUrl": "",
+      "primaryLink": {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.HSN.QuroScanner"
+      }
+    },
+    {
       "name": "Synzy",
       "category": "ai",
       "tag": "AI + college discovery",
@@ -223,6 +262,28 @@
       }
     },
     {
+      "name": "Drop!t",
+      "category": "utility",
+      "tag": "save anything",
+      "techBadge": {
+        "text": "DT",
+        "logo": ""
+      },
+      "description": "An instant space to save anything in seconds — links, notes, text and images stored safely on-device. No cloud, no accounts, no waiting.",
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Provider",
+        "On-device"
+      ],
+      "result": "",
+      "githubUrl": "",
+      "primaryLink": {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.hasneticlabs.drop_it"
+      }
+    },
+    {
       "name": "Hex Chatbot",
       "category": "ai",
       "tag": "AI chatbot",
@@ -242,6 +303,28 @@
       "primaryLink": {
         "label": "Play Store",
         "url": "https://play.google.com/store/apps/details?id=com.HSN.hex_chatbot"
+      }
+    },
+    {
+      "name": "HasneX",
+      "category": "media",
+      "tag": "video player",
+      "techBadge": {
+        "text": "HN",
+        "logo": ""
+      },
+      "description": "A privacy-focused local video player designed to give complete control over the viewing experience — smooth, offline, and entirely on-device.",
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Provider",
+        "On-device"
+      ],
+      "result": "",
+      "githubUrl": "",
+      "primaryLink": {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.hasneticlabs.hasnex"
       }
     }
   ],
@@ -300,5 +383,21 @@
       "points": []
     }
   ],
-  "testimonials": []
+  "testimonials": [
+    {
+      "quote": "Hasan picked up the Wybrid codebase fast and shipped the real-time booking flow ahead of schedule — clean architecture, no hand-holding needed.",
+      "name": "Engineering Lead",
+      "context": "Wybrid — PLACEHOLDER"
+    },
+    {
+      "quote": "Built Synzy end-to-end — backend, AI recommendations, mobile app — in a few months as an intern. Rare initiative for that stage.",
+      "name": "Founder",
+      "context": "Talent Connect: Campus to Cubicle — PLACEHOLDER"
+    },
+    {
+      "quote": "QuroScanner is the fastest, cleanest QR scanner I've used — does exactly what it says with none of the clutter.",
+      "name": "Play Store review",
+      "context": "QuroScanner user — PLACEHOLDER"
+    }
+  ]
 }
