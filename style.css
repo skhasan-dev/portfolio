@@ -306,12 +306,14 @@ header.nav.scrolled .nav-pill{background:linear-gradient(135deg,rgba(255,255,255
   display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .2s ease;
 }
 .btn-send:hover{background:var(--red);}
+.btn-send:disabled{opacity:0.6;cursor:default;pointer-events:none;}
 .form-msg{
   display:inline-block;margin-top:14px;font-family:var(--font-hand);color:var(--red);font-size:17px;
   border:2px solid var(--red);border-radius:8px;padding:5px 16px;
   transform:rotate(-3deg) scale(0.8);opacity:0;transition:opacity .3s ease,transform .3s ease;
 }
 .form-msg.show{opacity:1;transform:rotate(-3deg) scale(1);}
+.form-msg.error{color:var(--pencil);border-color:var(--pencil);}
 
 /* ── FOOTER ──────────────────────────────────────────────── */
 footer{border-top:1px solid var(--rule);padding:28px 0;font-family:var(--font-mono);font-size:12px;color:var(--pencil);}

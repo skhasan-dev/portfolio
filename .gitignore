@@ -1,4 +1,5 @@
 .env
+.vscode
 LAYOUT.md
 THEME.md
 inspiration.html

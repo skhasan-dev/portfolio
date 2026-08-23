@@ -1,8 +1,8 @@
 // ============================================================
 //  components/contact.js — Contact Section
 //  Email row (copy-to-clipboard + sparkle), social icon row
-//  (hidden per missing platform), and a cosmetic-only note form
-//  — resets and shows a stamp confirmation, sends nothing.
+//  (hidden per missing platform), and a note form that posts to
+//  the portfolio_manager /api/contact endpoint.
 // ============================================================
 
 /**
@@ -43,7 +43,7 @@ function buildNoteForm() {
       <label for="cmsg">Message</label>
       <textarea id="cmsg" rows="4" placeholder="Tell me a bit about the project..." required></textarea>
       <button type="submit" class="btn-send">Send note →</button>
-      <div class="form-msg" id="formMsg">noted — thanks, I'll reply within a day.</div>
+      <div class="form-msg" id="formMsg"></div>
     </form>`;
 }
 
@@ -100,15 +100,52 @@ function initContactCopy(email) {
 
 /**
  * initContactForm()
- * Cosmetic only — no backend. Prevents the real submit, shows
- * the stamp confirmation, resets the fields.
+ * Posts the note to portfolio_manager's public /api/contact
+ * endpoint. Shows a stamp confirmation on success, an inline
+ * error (rate-limited, validation failure, network down) on
+ * failure, and leaves the fields filled in so the visitor can
+ * retry without retyping.
  */
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
-  form.addEventListener('submit', (e) => {
+
+  const submitBtn = form.querySelector('.btn-send');
+  const msgEl = document.getElementById('formMsg');
+  const defaultBtnLabel = submitBtn.textContent;
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    document.getElementById('formMsg').classList.add('show');
-    form.reset();
+
+    const name = document.getElementById('cname').value.trim();
+    const email = document.getElementById('cemail').value.trim();
+    const message = document.getElementById('cmsg').value.trim();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    msgEl.classList.remove('show', 'error');
+
+    try {
+      const res = await fetch(`${CONFIG.API_BASE}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+      const json = await res.json().catch(() => ({}));
+
+      if (!res.ok || json.success === false) {
+        throw new Error(json.error || 'Could not send right now — try again shortly.');
+      }
+
+      msgEl.textContent = "noted — thanks, I'll reply within a day.";
+      form.reset();
+    } catch (err) {
+      msgEl.textContent = err.message || 'Could not send right now — try again shortly.';
+      msgEl.classList.add('error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = defaultBtnLabel;
+      msgEl.classList.add('show');
+    }
   });
 }
