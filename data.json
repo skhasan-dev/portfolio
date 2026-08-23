@@ -2,7 +2,7 @@
   "personal": {
     "name": "Hasan Shaikh",
     "initials": "HS",
-    "role": "Jr. Flutter Developer",
+    "role": "Flutter Developer",
     "location": "Mumbai, India",
     "eyebrowYear": "",
     "pinNote": "open to freelance Flutter work →",
@@ -383,21 +383,5 @@
       "points": []
     }
   ],
-  "testimonials": [
-    {
-      "quote": "Hasan picked up the Wybrid codebase fast and shipped the real-time booking flow ahead of schedule — clean architecture, no hand-holding needed.",
-      "name": "Engineering Lead",
-      "context": "Wybrid — PLACEHOLDER"
-    },
-    {
-      "quote": "Built Synzy end-to-end — backend, AI recommendations, mobile app — in a few months as an intern. Rare initiative for that stage.",
-      "name": "Founder",
-      "context": "Talent Connect: Campus to Cubicle — PLACEHOLDER"
-    },
-    {
-      "quote": "QuroScanner is the fastest, cleanest QR scanner I've used — does exactly what it says with none of the clutter.",
-      "name": "Play Store review",
-      "context": "QuroScanner user — PLACEHOLDER"
-    }
-  ]
+  "testimonials": []
 }
