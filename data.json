@@ -1,14 +1,14 @@
 {
   "personal": {
     "name": "Hasan Shaikh",
-    "initials": "HS",
+    "initials": "sk.dev",
     "role": "Flutter Developer",
     "location": "Mumbai, India",
     "eyebrowYear": "",
     "pinNote": "open to freelance Flutter work →",
     "lead": "Flutter developer building real-time booking platforms, AI-powered discovery apps, and privacy-first tools that run entirely on-device.",
     "email": "skhasan2829@gmail.com",
-    "linkedin": "https://linkedin.com/in/mohammad-hasan-shaikh",
+    "linkedin": "https://linkedin.com/in/mohamad-hasan-shaikh",
     "github": "https://github.com/skhasan-dev",
     "twitter": "",
     "resumePDF": "assets/Mohamad-Hasan-Shaikh.pdf"
@@ -65,11 +65,6 @@
   },
   "about": [
     {
-      "number": "87.17%",
-      "highlight": "Distinction",
-      "rest": "in Computer Engineering"
-    },
-    {
       "number": "7",
       "highlight": "Apps",
       "rest": "published on the Play Store"
@@ -83,76 +78,87 @@
       "number": "4",
       "highlight": "On-device",
       "rest": "apps — zero cloud, zero uploads"
-    },
-    {
-      "number": "19",
-      "highlight": "Years old",
-      "rest": "when the distinction landed"
-    },
-    {
-      "number": "3",
-      "highlight": "Roles",
-      "rest": "held across two companies"
     }
   ],
   "skills": [
     {
-      "tab": "Backend",
-      "folderTag": "folder 03 — backend & apis",
+      "tab": "Languages",
+      "folderTag": "PROGRAMMING LANGUAGES",
       "tools": [
         {
-          "label": "Node.js"
+          "label": "Dart"
         },
         {
-          "label": "Firebase"
+          "label": "Java"
         },
         {
-          "label": "REST APIs"
+          "label": "JavaScript"
         },
         {
-          "label": "WebSockets"
+          "label": "Python"
         }
       ]
     },
     {
-      "tab": "Core",
-      "folderTag": "folder 01 — core languages",
+      "tab": "Development",
+      "folderTag": "SOFTWARE DEVELOPMENT",
       "tools": [
         {
           "label": "Flutter"
         },
         {
-          "label": "Dart"
+          "label": "Node.js"
+        },
+        {
+          "label": "Express.js"
+        },
+        {
+          "label": "REST APIs"
         }
       ]
     },
     {
-      "tab": "State & Data",
-      "folderTag": "folder 02 — state & local data",
+      "tab": "Architecture",
+      "folderTag": "ARCHITECTURE & ENGINEERING",
+      "tools": [
+        {
+          "label": "Clean Architecture"
+        },
+        {
+          "label": "Dependency Injection"
+        }
+      ]
+    },
+    {
+      "tab": "State - Data",
+      "folderTag": "STATE & DATA",
       "tools": [
         {
           "label": "Provider"
         },
         {
-          "label": "GetX"
+          "label": "MongoDB"
+        },
+        {
+          "label": "Firebase"
         },
         {
           "label": "SQLite"
-        },
-        {
-          "label": "MongoDB"
         }
       ]
     },
     {
-      "tab": "Tooling",
-      "folderTag": "folder 04 — tooling",
+      "tab": "Practices",
+      "folderTag": "ENGINEERING PRACTICES",
       "tools": [
         {
-          "label": "Git"
+          "label": "Unit Testing"
         },
         {
-          "label": "Postman"
+          "label": "Widget Testing"
+        },
+        {
+          "label": "Debugging"
         }
       ]
     }
@@ -161,6 +167,10 @@
     {
       "id": "ai",
       "label": "AI & Backend"
+    },
+    {
+      "id": "package",
+      "label": "Packages"
     },
     {
       "id": "media",
@@ -326,6 +336,25 @@
         "label": "Play Store",
         "url": "https://play.google.com/store/apps/details?id=com.hasneticlabs.hasnex"
       }
+    },
+    {
+      "name": "flutter_feature_cli",
+      "category": "package",
+      "tag": "",
+      "techBadge": {
+        "text": "FP",
+        "logo": ""
+      },
+      "description": "A Dart CLI tool that automates Flutter feature structure generation based on your team's architecture. Supports Partial Clean Architecture, Clean Architecture, MVC, and MVVM — letting developers generate consistent folder structures and barrel files in seconds.",
+      "stack": [
+        "Flutter & Dart"
+      ],
+      "result": "",
+      "githubUrl": "https://github.com/skhasan-dev/flutter_feature_cli",
+      "primaryLink": {
+        "label": "View on pub.dev",
+        "url": "https://pub.dev/packages/flutter_feature_cli"
+      }
     }
   ],
   "experience": [
@@ -333,26 +362,28 @@
       "type": "work",
       "period": "Aug 2025 – Present",
       "role": "Flutter Developer",
-      "org": "Wybrid",
+      "org": "Wybrid Technologies Pvt. Ltd.",
       "location": "Mumbai, India",
       "points": [
         "Developing and maintaining the Wybrid real estate digitalization platform.",
         "Architecting Flutter apps with Provider state management.",
         "Implementing real-time features using WebSockets.",
         "Collaborating in agile sprints."
-      ]
+      ],
+      "startDate": "2025-08-01T00:00:00.000Z"
     },
     {
       "type": "work",
       "period": "Apr 2025 – Jul 2025",
       "role": "Flutter Developer Intern",
-      "org": "Wybrid",
+      "org": "Wybrid Technologies Pvt. Ltd.",
       "location": "Mumbai, India",
       "points": [
         "Contributed to core Flutter development of the Wybrid platform.",
         "Worked with Provider state management and REST API integrations.",
         "Strong performance led to a full-time offer within 4 months."
-      ]
+      ],
+      "startDate": "2025-04-01T00:00:00.000Z"
     },
     {
       "type": "work",
@@ -364,7 +395,8 @@
         "Built Synzy end-to-end from backend to mobile.",
         "Implemented AI-based college recommendation system.",
         "Built and deployed a Node.js backend on Hostinger VPS."
-      ]
+      ],
+      "startDate": "2025-01-01T00:00:00.000Z"
     },
     {
       "type": "education",
@@ -372,7 +404,8 @@
       "role": "Diploma in Computer Engineering",
       "org": "Government Polytechnic, Mumbai",
       "location": "87.17% · Distinction",
-      "points": []
+      "points": [],
+      "startDate": "2022-09-01T00:00:00.000Z"
     },
     {
       "type": "education",
@@ -380,7 +413,8 @@
       "role": "SSC",
       "org": "Sacred Heart Boys High School",
       "location": "83.40%",
-      "points": []
+      "points": [],
+      "startDate": "2021-06-01T00:00:00.000Z"
     }
   ],
   "testimonials": []
