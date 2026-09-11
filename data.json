@@ -1,0 +1,421 @@
+{
+  "personal": {
+    "name": "Hasan Shaikh",
+    "initials": "sk.dev",
+    "role": "Flutter Developer",
+    "location": "Mumbai, India",
+    "eyebrowYear": "",
+    "pinNote": "open to freelance Flutter work →",
+    "lead": "Flutter developer building real-time booking platforms, AI-powered discovery apps, and privacy-first tools that run entirely on-device.",
+    "email": "skhasan2829@gmail.com",
+    "linkedin": "https://linkedin.com/in/mohamad-hasan-shaikh",
+    "github": "https://github.com/skhasan-dev",
+    "twitter": "",
+    "resumePDF": "assets/Mohamad-Hasan-Shaikh.pdf"
+  },
+  "navLinks": [
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Stack",
+      "href": "#skills"
+    },
+    {
+      "label": "Experience",
+      "href": "#experience"
+    },
+    {
+      "label": "Projects",
+      "href": "#projects"
+    }
+  ],
+  "sections": {
+    "about": {
+      "eyebrow": "02 · About",
+      "title": "The work so far, reduced to numbers.",
+      "sub": "The rest is in the work below."
+    },
+    "skills": {
+      "eyebrow": "03 · Stack",
+      "title": "Open the drawer.",
+      "sub": "Four categories, tap one to open it."
+    },
+    "projects": {
+      "eyebrow": "04 · Work",
+      "title": "7 projects, briefly.",
+      "sub": "Apps I've designed, built, and shipped — solo and at work. Drag or scroll sideways to explore."
+    },
+    "experience": {
+      "eyebrow": "05 · Experience",
+      "title": "Career timeline",
+      "sub": "The résumé version, for the people who need to scan it fast."
+    },
+    "testimonials": {
+      "eyebrow": "06 · Feedback",
+      "title": "What people say.",
+      "sub": ""
+    },
+    "contact": {
+      "eyebrow": "07 · Contact",
+      "title": "Let's build something worth shipping.",
+      "sub": "Open to freelance Flutter work and full-time opportunities. Usually reply within a day."
+    }
+  },
+  "about": [
+    {
+      "number": "7",
+      "highlight": "Apps",
+      "rest": "published on the Play Store"
+    },
+    {
+      "number": "1.5+",
+      "highlight": "Years",
+      "rest": "shipping Flutter apps"
+    },
+    {
+      "number": "4",
+      "highlight": "On-device",
+      "rest": "apps — zero cloud, zero uploads"
+    }
+  ],
+  "skills": [
+    {
+      "tab": "Languages",
+      "folderTag": "PROGRAMMING LANGUAGES",
+      "tools": [
+        {
+          "label": "Dart"
+        },
+        {
+          "label": "Java"
+        },
+        {
+          "label": "JavaScript"
+        },
+        {
+          "label": "Python"
+        }
+      ]
+    },
+    {
+      "tab": "Development",
+      "folderTag": "SOFTWARE DEVELOPMENT",
+      "tools": [
+        {
+          "label": "Flutter"
+        },
+        {
+          "label": "Node.js"
+        },
+        {
+          "label": "Express.js"
+        },
+        {
+          "label": "REST APIs"
+        }
+      ]
+    },
+    {
+      "tab": "Architecture",
+      "folderTag": "ARCHITECTURE & ENGINEERING",
+      "tools": [
+        {
+          "label": "Clean Architecture"
+        },
+        {
+          "label": "Dependency Injection"
+        }
+      ]
+    },
+    {
+      "tab": "State - Data",
+      "folderTag": "STATE & DATA",
+      "tools": [
+        {
+          "label": "Provider"
+        },
+        {
+          "label": "MongoDB"
+        },
+        {
+          "label": "Firebase"
+        },
+        {
+          "label": "SQLite"
+        }
+      ]
+    },
+    {
+      "tab": "Practices",
+      "folderTag": "ENGINEERING PRACTICES",
+      "tools": [
+        {
+          "label": "Unit Testing"
+        },
+        {
+          "label": "Widget Testing"
+        },
+        {
+          "label": "Debugging"
+        }
+      ]
+    }
+  ],
+  "projectFilters": [
+    {
+      "id": "ai",
+      "label": "AI & Backend"
+    },
+    {
+      "id": "package",
+      "label": "Packages"
+    },
+    {
+      "id": "media",
+      "label": "Media"
+    },
+    {
+      "id": "utility",
+      "label": "Utilities"
+    }
+  ],
+  "projects": [
+    {
+      "name": "HasicX",
+      "category": "media",
+      "tag": "music player",
+      "techBadge": {
+        "text": "HC",
+        "logo": ""
+      },
+      "description": "A feature-rich local music player with playlists, looping, and favourites. Background playback with notification controls, everything persisted locally with SQLite.",
+      "stack": [
+        "Flutter",
+        "GetX",
+        "SQLite",
+        "Background Audio"
+      ],
+      "result": "",
+      "githubUrl": "",
+      "primaryLink": {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.HSN.hasicx"
+      }
+    },
+    {
+      "name": "QuroScanner",
+      "category": "utility",
+      "tag": "QR scanner",
+      "techBadge": {
+        "text": "QS",
+        "logo": ""
+      },
+      "description": "A clean, fast QR code scanner and generator built for everyday use — lightning-quick scanning with a user-friendly interface.",
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Provider",
+        "On-device"
+      ],
+      "result": "",
+      "githubUrl": "",
+      "primaryLink": {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.HSN.QuroScanner"
+      }
+    },
+    {
+      "name": "Synzy",
+      "category": "ai",
+      "tag": "AI + college discovery",
+      "techBadge": {
+        "text": "SY",
+        "logo": ""
+      },
+      "description": "A full-stack school & college discovery app with AI-based recommendations — students search, apply, and track institutions based on their preferences. Node.js backend on a VPS, Firebase for auth and real-time data.",
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Node.js",
+        "Firebase",
+        "AI Recommendations"
+      ],
+      "result": "",
+      "githubUrl": "",
+      "primaryLink": {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.TalentConnectExample.tc_sa"
+      }
+    },
+    {
+      "name": "Shrinkify",
+      "category": "utility",
+      "tag": "on-device tool",
+      "techBadge": {
+        "text": "SK",
+        "logo": ""
+      },
+      "description": "A fully local image compression utility with zero server dependency — batch compression with customizable quality, no uploads, no privacy concerns.",
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Provider",
+        "On-device"
+      ],
+      "result": "",
+      "githubUrl": "",
+      "primaryLink": {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.hasneticlabs.shrinkify"
+      }
+    },
+    {
+      "name": "Drop!t",
+      "category": "utility",
+      "tag": "save anything",
+      "techBadge": {
+        "text": "DT",
+        "logo": ""
+      },
+      "description": "An instant space to save anything in seconds — links, notes, text and images stored safely on-device. No cloud, no accounts, no waiting.",
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Provider",
+        "On-device"
+      ],
+      "result": "",
+      "githubUrl": "",
+      "primaryLink": {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.hasneticlabs.drop_it"
+      }
+    },
+    {
+      "name": "Hex Chatbot",
+      "category": "ai",
+      "tag": "AI chatbot",
+      "techBadge": {
+        "text": "HX",
+        "logo": ""
+      },
+      "description": "A GPT-4o Mini powered chatbot with 50 free daily requests and prompts tuned for crisp responses. GetX state management and Firebase handle sessions and auth.",
+      "stack": [
+        "Flutter",
+        "GetX",
+        "OpenAI API",
+        "Firebase"
+      ],
+      "result": "",
+      "githubUrl": "",
+      "primaryLink": {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.HSN.hex_chatbot"
+      }
+    },
+    {
+      "name": "HasneX",
+      "category": "media",
+      "tag": "video player",
+      "techBadge": {
+        "text": "HN",
+        "logo": ""
+      },
+      "description": "A privacy-focused local video player designed to give complete control over the viewing experience — smooth, offline, and entirely on-device.",
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Provider",
+        "On-device"
+      ],
+      "result": "",
+      "githubUrl": "",
+      "primaryLink": {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.hasneticlabs.hasnex"
+      }
+    },
+    {
+      "name": "flutter_feature_cli",
+      "category": "package",
+      "tag": "",
+      "techBadge": {
+        "text": "FP",
+        "logo": ""
+      },
+      "description": "A Dart CLI tool that automates Flutter feature structure generation based on your team's architecture. Supports Partial Clean Architecture, Clean Architecture, MVC, and MVVM — letting developers generate consistent folder structures and barrel files in seconds.",
+      "stack": [
+        "Flutter & Dart"
+      ],
+      "result": "",
+      "githubUrl": "https://github.com/skhasan-dev/flutter_feature_cli",
+      "primaryLink": {
+        "label": "View on pub.dev",
+        "url": "https://pub.dev/packages/flutter_feature_cli"
+      }
+    }
+  ],
+  "experience": [
+    {
+      "type": "work",
+      "period": "Aug 2025 – Present",
+      "role": "Flutter Developer",
+      "org": "Wybrid Technologies Pvt. Ltd.",
+      "location": "Mumbai, India",
+      "points": [
+        "Developing and maintaining the Wybrid real estate digitalization platform.",
+        "Architecting Flutter apps with Provider state management.",
+        "Implementing real-time features using WebSockets.",
+        "Collaborating in agile sprints."
+      ],
+      "startDate": "2025-08-01T00:00:00.000Z"
+    },
+    {
+      "type": "work",
+      "period": "Apr 2025 – Jul 2025",
+      "role": "Flutter Developer Intern",
+      "org": "Wybrid Technologies Pvt. Ltd.",
+      "location": "Mumbai, India",
+      "points": [
+        "Contributed to core Flutter development of the Wybrid platform.",
+        "Worked with Provider state management and REST API integrations.",
+        "Strong performance led to a full-time offer within 4 months."
+      ],
+      "startDate": "2025-04-01T00:00:00.000Z"
+    },
+    {
+      "type": "work",
+      "period": "Jan 2025 – Apr 2025",
+      "role": "Flutter Developer Intern",
+      "org": "Talent Connect: Campus to Cubicle",
+      "location": "Mumbai, India",
+      "points": [
+        "Built Synzy end-to-end from backend to mobile.",
+        "Implemented AI-based college recommendation system.",
+        "Built and deployed a Node.js backend on Hostinger VPS."
+      ],
+      "startDate": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "education",
+      "period": "2022 – 2025",
+      "role": "Diploma in Computer Engineering",
+      "org": "Government Polytechnic, Mumbai",
+      "location": "87.17% · Distinction",
+      "points": [],
+      "startDate": "2022-09-01T00:00:00.000Z"
+    },
+    {
+      "type": "education",
+      "period": "2021 – 2022",
+      "role": "SSC",
+      "org": "Sacred Heart Boys High School",
+      "location": "83.40%",
+      "points": [],
+      "startDate": "2021-06-01T00:00:00.000Z"
+    }
+  ],
+  "testimonials": []
+}
