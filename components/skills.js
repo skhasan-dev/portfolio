@@ -22,7 +22,7 @@ function renderSkills(container, sectionCopy, categories) {
         <div class="folder-panel${i === 0 ? ' active' : ''}" data-panel="panel-${i}">
           <span class="folder-tag">${escapeHtml(cat.folderTag)}</span>
           <div class="folder-items">
-            ${cat.tools.map(t => `<span class="folder-item">${escapeHtml(t)}</span>`).join('')}
+            ${cat.tools.map(t => `<span class="folder-item">${escapeHtml(t.label)}</span>`).join('')}
           </div>
         </div>
       `).join('')}
