@@ -37,6 +37,11 @@
       "title": "The work so far, reduced to numbers.",
       "sub": "The rest is in the work below."
     },
+    "testimonials": {
+      "eyebrow": "06 · Feedback",
+      "title": "What people say.",
+      "sub": ""
+    },
     "skills": {
       "eyebrow": "03 · Stack",
       "title": "Open the drawer.",
@@ -51,11 +56,6 @@
       "eyebrow": "05 · Experience",
       "title": "Career timeline",
       "sub": "The résumé version, for the people who need to scan it fast."
-    },
-    "testimonials": {
-      "eyebrow": "06 · Feedback",
-      "title": "What people say.",
-      "sub": ""
     },
     "contact": {
       "eyebrow": "07 · Contact",
@@ -360,7 +360,16 @@
   "experience": [
     {
       "type": "work",
-      "period": "Aug 2025 – Present",
+      "period": "Oct 2026 - Present",
+      "startDate": "2026-10-01T00:00:00.000Z",
+      "role": "Flutter Developer",
+      "org": "DigitalSalt Technologies Pvt. Ltd.",
+      "location": "Mumbai, India",
+      "points": []
+    },
+    {
+      "type": "work",
+      "period": "Aug 2025 – Sept 2026",
       "role": "Flutter Developer",
       "org": "Wybrid Technologies Pvt. Ltd.",
       "location": "Mumbai, India",
